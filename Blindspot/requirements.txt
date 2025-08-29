@@ -1,0 +1,29 @@
+# Web Application Framework
+fastapi
+uvicorn
+python-multipart
+
+# Template Engine for HTML
+jinja2
+
+# AI / NLP Libraries for Core Functionality
+torch
+transformers
+sentence-transformers
+
+# --- Model Training Dependencies ---
+# (Needed to run the prepare_data.py and train_classifier.py scripts)
+
+# Data Handling and Processing
+pandas
+PyYAML
+
+# Machine Learning and Data Balancing
+scikit-learn
+imbalanced-learn
+joblib
+
+# --- Legacy / Alternative Libraries ---
+# (Used in previous versions of the detectors)
+langdetect
+fasttext-wheel

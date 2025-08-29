@@ -1,0 +1,38 @@
+{
+  "Jailbreak": {
+    "description": "The prompt attempts to make the AI adopt a new, unrestricted persona (e.g., DAN, 'GodMode') or to break its core rules through role-playing.",
+    "mitigation": "Use instruction-tuned models with robust system prompts that reinforce the AI's intended persona. Monitor for and refuse role-playing that bypasses safety."
+  },
+  "Prompt Injection": {
+    "description": "The prompt contains direct commands intended to override or ignore the original system instructions provided by the developers.",
+    "mitigation": "Implement strict parsing of user input and system instructions. Clearly delimit user input from your system prompt. Fine-tune models to reject meta-instructions."
+  },
+  "Data Exfiltration": {
+    "description": "The prompt is designed to trick the AI into revealing sensitive, confidential, or internal system information, such as API keys, passwords, or configuration data.",
+    "mitigation": "Never place secrets or sensitive data directly in the LLM's context or system prompt. Use external, secure data retrieval methods and filter the LLM's output for sensitive patterns."
+  },
+  "Misinformation": {
+    "description": "The prompt is instructing the AI to generate content that is deliberately false, misleading, or constitutes propaganda, such as fake news or rumors.",
+    "mitigation": "Add a system prompt instruction to refuse the generation of knowingly false narratives. Ground the model with real-time, verifiable data sources for factual topics."
+  },
+  "PII Harvesting": {
+    "description": "The prompt attempts to trick the AI into collecting or asking for Personally Identifiable Information (PII) from a user.",
+    "mitigation": "Instruct the model in its system prompt to never ask for or store PII. Filter the model's output to prevent it from asking for sensitive user details."
+  },
+  "Hate Speech": {
+    "description": "The prompt contains or requests the generation of content that attacks, demeans, or promotes discrimination against individuals or groups.",
+    "mitigation": "Utilize classifiers and content moderation APIs trained to detect hate speech and toxicity. Enforce a zero-tolerance policy in the system prompt."
+  },
+  "Harmful Content": {
+    "description": "The prompt is requesting instructions or content related to illegal, dangerous, or unethical activities, such as creating weapons or malware.",
+    "mitigation": "Employ strong content filters and classifiers for unsafe topics. Maintain a strict, non-negotiable system prompt that forbids generating such content."
+  },
+  "PII Detected": {
+    "description": "The prompt itself contains Personally Identifiable Information (PII) like an email address, posing a data privacy risk.",
+    "mitigation": "Use a PII detection service to scan and redact sensitive information from all prompts *before* they are processed by the LLM."
+  },
+  "Contextual Risk": {
+    "description": "A combination of factors, such as a moderately suspicious prompt in a non-English language ({language}), has elevated the overall risk.",
+    "mitigation": "Ensure all security detectors and classifiers are multilingual. Pay special attention to prompts that have a moderate semantic risk score when they are not in the system's primary language."
+  }
+}
